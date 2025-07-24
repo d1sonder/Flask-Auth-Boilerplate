@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Аватар">
+                <h3>{{ username }}</h3>
+                <p class="text-muted">Зарегистрированный пользователь</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>Информация о профиле</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <h5 class="alert-heading">Добро пожаловать в ваш личный кабинет!</h5>
+                    <p>Здесь вы можете управлять своей учетной записью и настройками.</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Статистика</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Дней с регистрации
+                                        <span class="badge bg-primary rounded-pill">14</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Активность
+                                        <span class="badge bg-success rounded-pill">Высокая</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Быстрые действия</h5>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-primary">Изменить профиль</button>
+                                    <button class="btn btn-outline-secondary">Настройки</button>
+                                    <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">Выйти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

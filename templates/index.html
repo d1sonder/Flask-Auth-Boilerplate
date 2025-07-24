@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 mb-4">Добро пожаловать на наш сайт!</h1>
+        <p class="lead mb-4">Это современный сайт с авторизацией и красивым дизайном.</p>
+        {% if 'user_id' not in session %}
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 gap-3">Войти</a>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-secondary btn-lg px-4">Регистрация</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="features-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Наши преимущества</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Безопасность</h3>
+                        <p class="card-text">Надежная система авторизации с защитой паролей.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Адаптивность</h3>
+                        <p class="card-text">Полностью адаптивный дизайн для всех устройств.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Скорость</h3>
+                        <p class="card-text">Оптимизированная работа для быстрой загрузки.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
